@@ -17,6 +17,7 @@ import Post from "./pages/Post";
 
 import AllPosts from "./pages/AllPosts";
 import AdminPage from "./pages/AdminPage";
+import UserDash from "./pages/UserDash";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,14 @@ const router = createBrowserRouter([
             element: (
                 <AuthLayout authentication>
                     <AdminPage />
+                </AuthLayout>
+            ),
+        },
+        {
+            path:"/userdashboard",
+            element: (
+                <AuthLayout authentication>
+                    <UserDash/>
                 </AuthLayout>
             ),
         }
