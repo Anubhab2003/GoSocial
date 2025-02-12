@@ -5,7 +5,9 @@ import authService from "./appwrite/auth"
 import {login, logout} from "./store/authSlice"
 import { Footer, Header } from './components'
 import { Outlet } from 'react-router-dom'
-import { Analytics } from '@vercel/analytics/react';
+import { inject } from '@vercel/analytics';
+
+inject(); // Initialize Vercel Analytics
 
 
 function App() {
@@ -31,7 +33,7 @@ function App() {
           <Outlet />
         </main>
         <Footer className='w-full' />
-        <Analytics/>
+        
     </div>
 ) : null;
 }
