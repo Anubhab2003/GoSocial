@@ -5,6 +5,8 @@ import TinyMCEEditor from '../TinyMCEEditor'; // Import TinyMCEEditor
 import appwriteService from '../../appwrite/config';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import Swal from 'sweetalert2';
+
 
 function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
@@ -80,6 +82,14 @@ function PostForm({ post }) {
             subscription.unsubscribe(); // MEMORY MANAGEMENT AND OPTIMIZATION
         };
     }, [watch, slugTransform, setValue]);
+    const showAlert = () => {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Post submitted successfully',
+          icon: 'success',
+          confirmButtonText: 'Okay'
+        });
+      };
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
@@ -127,7 +137,10 @@ function PostForm({ post }) {
                     className="mb-4"
                     {...register('status', { required: true })}
                 />
-                <Button type="submit" className="w-full bg-blue-600" text={post ? 'Update' : 'Submit'} />
+                <Button type="submit" className="w-full bg-blue-600" text={post ? 'Update' : 'Submit'}
+                onClick={showAlert} 
+                />
+                
             </div>
         </form>
     );

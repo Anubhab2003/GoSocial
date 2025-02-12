@@ -20,7 +20,7 @@ function AllPosts() {
                     </div>
                 ))}
             </div>
-            </Container>
+        </Container>
     </div>
   )
 }
