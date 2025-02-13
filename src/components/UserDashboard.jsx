@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Client, Account } from 'appwrite';
 import conf from '../conf/conf';
+import ActiveUsers from './ActiveUsers';
+import Chat from './Chat';
 
 const client = new Client()
     .setEndpoint(conf.appwriteUrl) // Your Appwrite endpoint
@@ -10,6 +12,7 @@ const account = new Account(client);
 
 function UserDashboard() {
     const [user, setUser] = useState(null);
+    const [selectedUser, setSelectedUser] = useState(null);
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -43,6 +46,16 @@ function UserDashboard() {
                     Logout
                 </button>
             </div>
+
+            <div className="mt-8">
+                {user && <ActiveUsers selectUser={setSelectedUser} userId={user.$id} />}
+            </div>
+
+            {selectedUser && user && (
+                <div className="mt-8">
+                    <Chat selectedUser={selectedUser} userId={user.$id} />
+                </div>
+            )}
         </div>
     );
 }
