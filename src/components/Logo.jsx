@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-function Logo({width='100px'}) {
+
+function Logo({ width = '100px', height = '50px' }) {
   return (
-    <img src="../assets/pexels-hngstrm-1203777.jpg" alt=""/>
-  )
+    <img
+      src="/target.png"
+      alt="Company Logo"
+      style={{ width }}
+    />
+  );
 }
 
-export default Logo
+export default Logo;

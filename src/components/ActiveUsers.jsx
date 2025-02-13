@@ -6,6 +6,7 @@ function ActiveUsers({ selectUser, userId }) {
 
     useEffect(() => {
         socket.emit('addUser', userId);
+        console.log(userId)
 
         socket.on('getUsers', (users) => {
             setActiveUsers(users);
