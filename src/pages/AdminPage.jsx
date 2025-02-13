@@ -4,10 +4,9 @@ import { Client, Account } from 'appwrite';
 import DeleteAllPosts from '../components/DeleteAllPosts';
 import conf from '../conf/conf';
 
-
 const client = new Client()
-    .setEndpoint(conf.appwriteUrl) // Replace with your Appwrite endpoint
-    .setProject(conf.appwriteProjectId); // Replace with your project ID
+    .setEndpoint(conf.appwriteUrl) // Your Appwrite endpoint
+    .setProject(conf.appwriteProjectId); // Your Appwrite project ID
 
 const account = new Account(client);
 
@@ -43,7 +42,7 @@ function AdminPage() {
             <div className="bg-white shadow-lg rounded-2xl p-8 max-w-lg w-full text-center">
                 <h1 className="text-3xl font-bold text-gray-800 mb-4">WELCOME TO ADMIN PANEL</h1>
                 <p className="text-gray-600 mb-6">
-                     MANAGE THE PANEL CAREFULLY AND BE RESPONSIBLE FOR YOUR ACTIONS.
+                    WITH GREAT POWER COMES GREAT RESPONSIBILITY. MANAGE THE PANEL CAREFULLY AND BE RESPONSIBLE FOR YOUR ACTIONS.
                 </p>
                 <button 
                     className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition-all duration-300"

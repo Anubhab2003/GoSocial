@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Client, Account } from 'appwrite';
 import conf from '../conf/conf';
-import ActiveUsers from './ActiveUsers';
-import Chat from './Chat';
+
 
 const client = new Client()
     .setEndpoint(conf.appwriteUrl) // Your Appwrite endpoint
