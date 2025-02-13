@@ -46,15 +46,7 @@ function UserDashboard() {
                 </button>
             </div>
 
-            <div className="mt-8">
-                {user && <ActiveUsers selectUser={setSelectedUser} userId={user.$id} />}
-            </div>
-
-            {selectedUser && user && (
-                <div className="mt-8">
-                    <Chat selectedUser={selectedUser} userId={user.$id} />
-                </div>
-            )}
+            
         </div>
     );
 }
